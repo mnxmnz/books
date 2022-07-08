@@ -12,25 +12,25 @@
     'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', sans-serif;
 
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #6868ac;
+  --ifm-color-primary-dark: #4c4c93;
+  --ifm-color-primary-darker: #34347b;
+  --ifm-color-primary-darkest: #212163;
+  --ifm-color-primary-light: #9090cd;
+  --ifm-color-primary-lighter: #afafe6;
+  --ifm-color-primary-lightest: #cfcff6;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #9494f7;
+  --ifm-color-primary-dark: #6c6cd4;
+  --ifm-color-primary-darker: #4a4ab1;
+  --ifm-color-primary-darkest: #2f2f8f;
+  --ifm-color-primary-light: #aeaefa;
+  --ifm-color-primary-lighter: #bfbffc;
+  --ifm-color-primary-lightest: #d5d5fe;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
