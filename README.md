@@ -1,41 +1,56 @@
-# Website
+<h1 align="center">MZ's Book Report</h1>
+<p align="center">Learning by Writing</p>
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+<br />
 
-### Installation
+## About The Project
 
-```
-$ yarn
-```
+기술 서적을 읽고 기록하는 사이트입니다.
 
-### Local Development
+[Docusaurus](https://docusaurus.io/)를 사용했습니다.
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```shell
+npx create-docusaurus@latest my-website classic --typescript
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+<br />
 
-### Deployment
+## Getting Started
 
-Using SSH:
+#### Installation
 
-```
-$ USE_SSH=true yarn deploy
-```
+1. Clone the Repo
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
+```shell
+git clone https://github.com/mnxmnz/Book-Report.git
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+```shell
+cd Book-Report
+```
+
+2. Install Project Packages
+
+```shell
+yarn
+```
+
+3. Run the Project (Dev Mode)
+
+```shell
+yarn start
+
+http://localhost:3000/
+```
+
+<br />
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<br />
+
+## Contact
+
+You can shoot me an email at <a href="mailto:minzidev@gmail.com">minzidev@gmail.com</a>
