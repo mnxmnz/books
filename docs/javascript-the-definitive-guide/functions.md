@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# 8장 함수(function)
+# 8장 함수
 
 ## 8.1 함수 정의
 
@@ -1083,3 +1083,9 @@ function memoize(f) {
 - 분해 연산자 `...` 를 사용해 배열이나 이터러블 객체의 요소를 함수 인자로 전달해 호출할 수 있습니다.
 - 외부 함수 안에서 정의되고 반환된 함수는 외부 함수의 어휘적 스코프에 대한 접근을 유지하고 있으므로, 외부 함수에서 정의한 변수에 접근할 수 있습니다. 이런 함수를 클로저라 부르며, 클로저는 충분히 알아 둘 만한 기법입니다.
 - 함수는 자바스크립트에서 조작할 수 있는 객체이며, 이를 통해 함수형 프로그래밍 스타일을 사용할 수 있습니다.
+
+<br />
+
+<hr />
+
+JavaScript: The Definitive Guide, Seventh Edition, by David Flanagan (O'Really). Copyright 2020 David Flanagan, 978-1-491-95202-3

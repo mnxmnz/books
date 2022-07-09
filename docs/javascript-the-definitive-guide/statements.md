@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# 5장 문(statement)
+# 5장 문
 
 **문**이란 자바스크립트의 문장이나 명령어입니다.
 
@@ -591,3 +591,9 @@ try {
 | while             | 기본적인 루프                                                            |
 | with              | 스코프 체인을 확장합니다. (스트릭트 모드에서는 사용 금지)                |
 | yield             | 순회할 값을 전달합니다. 제너레이터 함수에서만 사용할 수 있습니다.        |
+
+<br />
+
+<hr />
+
+JavaScript: The Definitive Guide, Seventh Edition, by David Flanagan (O'Really). Copyright 2020 David Flanagan, 978-1-491-95202-3

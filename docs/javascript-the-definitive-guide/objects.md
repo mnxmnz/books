@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# 6장 객체(object)
+# 6장 객체
 
 **객체**란 프로퍼티의 순서 없는 집합이며 각 프로퍼티에는 이름과 값이 있습니다.
 
@@ -552,3 +552,9 @@ let o = {
 - `Object.assign()`을 통해 다른 객체로 프로퍼티를 복사하는 방법
 
 기본 값이 아닌 자바스크립트 값은 모두 객체입니다. 배열과 함수 역시 객체입니다.
+
+<br />
+
+<hr />
+
+JavaScript: The Definitive Guide, Seventh Edition, by David Flanagan (O'Really). Copyright 2020 David Flanagan, 978-1-491-95202-3
