@@ -67,6 +67,12 @@ const config = {
             position: 'left',
             label: 'Javascript The Definitive Guide',
           },
+          {
+            type: 'doc',
+            docId: '/category/networking-principles',
+            position: 'left',
+            label: 'Networking Principles',
+          },
         ],
       },
       footer: {
@@ -86,6 +92,10 @@ const config = {
               {
                 label: 'Javascript The Definitive Guide',
                 to: '/category/javascript-the-definitive-guide',
+              },
+              {
+                label: 'Network Principles',
+                to: '/category/networking-principles',
               },
             ],
           },
