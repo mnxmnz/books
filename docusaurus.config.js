@@ -48,32 +48,6 @@ const config = {
           alt: "MZ's Book Report Logo",
           src: 'img/logo.svg',
         },
-        items: [
-          {
-            type: 'doc',
-            docId: '/category/bottlenecks',
-            position: 'left',
-            label: 'Bottlenecks',
-          },
-          {
-            type: 'doc',
-            docId: '/category/clean-code',
-            position: 'left',
-            label: 'Clean Code',
-          },
-          {
-            type: 'doc',
-            docId: '/category/javascript-the-definitive-guide',
-            position: 'left',
-            label: 'Javascript The Definitive Guide',
-          },
-          {
-            type: 'doc',
-            docId: '/category/networking-principles',
-            position: 'left',
-            label: 'Networking Principles',
-          },
-        ],
       },
       footer: {
         style: 'dark',
