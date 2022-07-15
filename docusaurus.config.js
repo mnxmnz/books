@@ -68,7 +68,7 @@ const config = {
                 to: '/category/javascript-the-definitive-guide',
               },
               {
-                label: 'Network Principles',
+                label: 'Networking Principles',
                 to: '/category/networking-principles',
               },
             ],
