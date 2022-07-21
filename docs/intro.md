@@ -8,4 +8,4 @@ sidebar_position: 1
 > 개발 서적을 읽고 기록하고 있습니다.
 
 - [GitHub](https://github.com/mnxmnz)
-- [MZ's Devlog](https://mnxmnz.github.io/)
+- [MZ's Devlog](https://mnxmnz.vercel.app)

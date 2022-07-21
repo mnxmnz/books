@@ -82,7 +82,7 @@ const config = {
               },
               {
                 label: "MZ's Devlog",
-                href: 'https://mnxmnz.github.io',
+                href: 'https://mnxmnz.vercel.app',
               },
             ],
           },
