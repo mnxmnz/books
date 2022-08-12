@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 4장 게슈탈트 인지
 
-[1부 주의 병목 구간](https://mnxmnz-book.vercel.app/bottlenecks/the-bottlenecks-of-attention/)을 통과하면 당신이 만든 밈이 사용자의 뇌까지 전달됐다. 이제 당신의 의도대로 뇌가 해석해 주는 것이 필요하다. 그렇지 않으면 그것이 얼마나 중요한 의미의 정보인지 사용자가 알 수 없다. 이것이 **인지 병목 구간**이다.
+[1부 주의 병목 구간](https://deeming-reading.vercel.app/bottlenecks/the-bottlenecks-of-attention/)을 통과하면 당신이 만든 밈이 사용자의 뇌까지 전달됐다. 이제 당신의 의도대로 뇌가 해석해 주는 것이 필요하다. 그렇지 않으면 그것이 얼마나 중요한 의미의 정보인지 사용자가 알 수 없다. 이것이 **인지 병목 구간**이다.
 
 사용자는 사물의 인식에 필요한 자원을 되도록 사용하지 않으려 하는 경향이 있다. 인간은 밈이 어떤 중요한 의미를 갖고 있는지를 파악하는 데 최소한의 인식 자원만 배정한다.
 
@@ -33,13 +33,13 @@ sidebar_position: 2
 
 <summary>게슈탈트 오류를 제거하는 방법</summary>
 
-- 근접한 거리에 있는 경우, 중요한 링크를 웹 사이트 내에 일반적으로 광고가 게재되는 위치에서 다른 곳으로 옮긴다.
-- 색깔이나 형태가 비슷한 경우, 클릭이 가능한 링크는 다른 색깔을 사용한다. 일반적인 텍스트를 파란색 혹은 밑줄로 표시를 하지 않는다.
-- 크기나 형태가 비슷한 경우, 비디오를 재생하는 버튼을 표시하기 위해서 오른쪽을 향하고 있는 삼각형 외에는 쓰지 않는다.
-- 같은 방향으로 움직이고 있는 경우, 위저드 스텝이나 체크아웃 프로세스를 탭으로 보이지 말고 화살표나 선으로 표시하라.
-- 같은 선상에 있는 경우, 서로 연관 있는 요소들은 수평 이동 창에 표시하고 관련성 없는 것들은 제외하라.
-- 같은 구역에 있는 경우, 서로 연관 있는 요소들은 박스 표시로 묶어 주고 관련성 없는 것들은 박스 바깥에 위치시켜라.
-- 그래픽적으로 연결할 경우, 선을 긋고 점을 연결하라.
+-   근접한 거리에 있는 경우, 중요한 링크를 웹 사이트 내에 일반적으로 광고가 게재되는 위치에서 다른 곳으로 옮긴다.
+-   색깔이나 형태가 비슷한 경우, 클릭이 가능한 링크는 다른 색깔을 사용한다. 일반적인 텍스트를 파란색 혹은 밑줄로 표시를 하지 않는다.
+-   크기나 형태가 비슷한 경우, 비디오를 재생하는 버튼을 표시하기 위해서 오른쪽을 향하고 있는 삼각형 외에는 쓰지 않는다.
+-   같은 방향으로 움직이고 있는 경우, 위저드 스텝이나 체크아웃 프로세스를 탭으로 보이지 말고 화살표나 선으로 표시하라.
+-   같은 선상에 있는 경우, 서로 연관 있는 요소들은 수평 이동 창에 표시하고 관련성 없는 것들은 제외하라.
+-   같은 구역에 있는 경우, 서로 연관 있는 요소들은 박스 표시로 묶어 주고 관련성 없는 것들은 박스 바깥에 위치시켜라.
+-   그래픽적으로 연결할 경우, 선을 긋고 점을 연결하라.
 
 </details>
 
@@ -80,7 +80,7 @@ sidebar_position: 2
 
 #### 사진 출처 📷
 
-- [Exploring the Gestalt Principles of Design | Toptal](https://www.toptal.com/designers/ui/gestalt-principles-of-design)
-- [TAPSONIC BOLD](https://store.steampowered.com/app/938220/TAPSONIC_BOLD/)
-- [Remote Control User Experience](https://www.pngitem.com/middle/hmxTmhJ_remote-control-user-experience-hd-png-download/)
-- [Perceptual Organization](https://jackwestin.com/resources/mcat-content/perception/perceptual-organization)
+-   [Exploring the Gestalt Principles of Design | Toptal](https://www.toptal.com/designers/ui/gestalt-principles-of-design)
+-   [TAPSONIC BOLD](https://store.steampowered.com/app/938220/TAPSONIC_BOLD/)
+-   [Remote Control User Experience](https://www.pngitem.com/middle/hmxTmhJ_remote-control-user-experience-hd-png-download/)
+-   [Perceptual Organization](https://jackwestin.com/resources/mcat-content/perception/perceptual-organization)
