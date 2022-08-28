@@ -367,6 +367,150 @@ HTML `<audio>`, `<video>` 요소를 생각해 보면 섀도우 DOM의 목적을 
 
 <br />
 
+## 15.10 위치, 네비게이션, 히스토리[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#1510-%EC%9C%84%EC%B9%98-%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC)
+
+Window와 Document 객체의 `location` 프로퍼티는, 현재 창에 표시되는 문서의 URL을 나타내고 창에 새로운 문서를 불러오는 API를 제공하는 Location 객체를 참조한다.
+
+- `hash`: URL에서 해시 마크(#)와 요소 ID로 구성된 부분이 있다면 그 부분을 나타내는 해시 식별자를 반환한다.
+- `search`: URL에서 물음표로 시작하는 부분을 반환하며 이 문자열은 일종의 쿼리스트링으로 쓰인다.
+
+`window.location.search`를 파싱하고 싶다면 Location 객체에서 URL 객체를 생성하고 URL의 `searchParams`를 사용하면 된다.
+
+```jsx
+let url = new URL(window.location);
+let query = url.searchParams.get('q');
+let numResults = parseInt(url.searchParams.get('n') || '10');
+```
+
+### 15.10.1 새로운 문서 로딩[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#15101-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EB%A1%9C%EB%94%A9)
+
+`window.location`이나 `document.location`에 문자열을 할당하면 브라우저는 문자열을 URL로 해석하고 불러와서 현재 문서를 대체한다.
+
+```jsx
+window.location = 'http://ebook.insightbook.co.kr/';
+```
+
+해시 식별자 하나만 사용하면 브라우저는 새로운 문서를 불러오지 않고 해당 해시와 일치하는 `id` 또는 `name` 속성의 요소를 찾고 요소가 브라우저 창 위쪽에 보이도록 스크롤한다.
+
+- `#top`은 문서 맨 처음으로 돌아간다.
+
+Location 객체의 프로퍼티는 쓰기 가능이며 이 값을 바꾸면 URL이 바뀌고 브라우저가 새로운 문서를 불러온다.
+
+```jsx
+document.location.path = 'pages/3.html'; // 새로운 페이지를 불러온다.
+document.location.hash = 'TOC'; // 차례 위치까지 스크롤한다.
+location.search = '?page=' + (page + 1); // 새로운 쿼리스트링으로 다시 불러온다.
+```
+
+Location 객체의 `replace()` 메서드는 브라우저의 히스토리에 있는 현재 문서를 교체한다.
+
+- 사용자가 뒤로 가기 버튼을 클릭하면 브라우저는 문서 A보다 먼저 표시했던 문서로 돌아간다.
+
+### 15.10.2 히스토리 브라우징[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#15102-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95)
+
+Window 객체의 `history` 프로퍼티는 해당 창의 History 객체를 가리킨다.
+
+- History 객체는 창에서 불러왔던 문서와 그 상태의 리스트이다.
+
+```jsx
+history.go(0); // 현재 페이지를 리로드하는 또 다른 방법
+```
+
+브라우저 창에 `<iframe>` 요소 같은 자식 창이 포함되어 있다면 자식 창의 히스토리가 메인 창의 히스토리에 시간 순서대로 삽입된다.
+
+- 메인 창에서 `history.back()`을 호출하면 자식 창 중 하나가 이전 문서로 돌아가고 메인 창에는 변화가 없을 수도 있다.
+
+### 15.10.3 hashchange 이벤트를 통한 히스토리 관리[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#15103-hashchange-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%ED%86%B5%ED%95%9C-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EA%B4%80%EB%A6%AC)
+
+`location.hash` 프로퍼티를 설정하면 주소 표시줄에 표시되는 URL이 바뀌고 브라우저 히스토리 항목에 추가된다. 문서의 해시 식별자가 바뀔 때마다 브라우저는 Window 객체에서 `hashchange` 이벤트를 일으킨다. `location.hash` 값을 바꾸면 `hashchange` 이벤트가 일어나며 브라우저의 히스토리에 새로운 항목이 추가된다. 사용자가 뒤로 가기 버튼을 클릭하면 브라우저는 `location.hash`를 바꾸기 전의 URL로 돌아간다. 해시 식별자가 바뀌었다는 뜻이므로 또 다른 `hashchange` 이벤트가 일어난다.
+
+즉, 애플리케이션의 각 상태와 해시 식별자를 1:1로 대응시키면 `hashchange` 이벤트를 통해 사용자의 앞뒤 이동을 알 수 있다.
+
+### 15.10.4 pushState()를 사용한 히스토리 관리[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#15103-hashchange-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%ED%86%B5%ED%95%9C-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EA%B4%80%EB%A6%AC)
+
+웹 애플리케이션은 새로운 상태로 전환할 때 `history.pushState()`를 호출해 현재 상태를 나타내는 객체를 브라우저의 히스토리에 추가한다.
+
+- 사용자가 뒤로 가기 버튼을 클릭하면 브라우저는 저장된 상태 객체와 함께 `popstate` 이벤트를 일으키므로, 애플리케이션에서 이 객체를 사용해 이전 상태로 돌아갈 수 있다.
+
+---
+
+## 15.11 네트워크[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#1511-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+
+### 15.11.1 fetch()
+
+Fetch API는 HTTP 파이프라인을 구성하는 요청과 응답 등의 요소를 자바스크립트에서 접근하고 조작할 수 있는 인터페이스를 제공한다.
+
+- Fetch API가 제공하는 전역 `fetch()`메서드로 네트워크의 리소스를 비동기적으로 가져올 수 있다.
+
+```jsx
+fetch('http://example.com/movies.json')
+	.then(response => response.json())
+	.then(data => console.log(data));
+```
+
+가장 단순한 형태의 `fetch()`는 가져오고자 하는 리소스의 경로를 나타내는 하나의 인수만 받는다. 응답은 `Response` [](https://developer.mozilla.org/en-US/docs/Web/API/Response)객체로 표현되며, 직접 JSON 응답 본문을 받을 수는 없다.
+
+- `Response` 객체는 JSON 응답 본문을 그대로 포함하지 않는다.
+- `Response`는 HTTP 응답 전체를 나타내는 객체로, JSON 본문 콘텐츠를 추출하기 위해 `json()` 메서드를 호출해야 한다. `json()`은 응답 본문 텍스트를 JSON으로 파싱한 결과로 이행하는, 또 다른 프로미스를 반환한다.
+
+### 15.11.3 웹소켓
+
+웹소켓을 사용하면 서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있다.
+
+- 데이터는 패킷 형태로 전달되며, 전송은 커넥션 중단과 추가 HTTP 요청 없이 양방향으로 이뤄진다.
+
+```jsx
+let socket = new WebSocket('wss://example/websocket/demo');
+```
+
+소켓이 정상적으로 만들어지면 아래 네 개의 이벤트를 사용할 수 있게 된다.
+
+- **`open`:** 커넥션이 제대로 만들어졌을 때 발생한다.
+- **`message`:** 데이터를 수신하였을 때 발생한다.
+- **`error`:** 에러가 생겼을 때 발생한다.
+- **`close`:** 커넥션이 종료되었을 때 발생한다.
+
+---
+
+## 15.12 스토리지[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#1512-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80)
+
+### 15.12.1 로컬스토리지와 세션스토리지
+
+`localStorage`는 `sessionStorage`와 비슷하지만, `localStorage`의 데이터는 만료되지 않고 `sessionStorage`의 데이터는 페이지 세션이 끝날 때(페이지를 닫을 때) 사라지는 점이 다르다.
+
+- `localStorage`에 저장한 자료는 페이지 프로토콜별로 구분한다. 특히 HTTP로 방문한 페이지에서 저장한 데이터는 같은 페이지의 HTTPS와 다른 `localStorage`에 저장된다.
+
+### 15.12.2 쿠키
+
+쿠키는 주로 웹 서버에 의해 만들어진다. 서버가 HTTP 응답 헤더의 `Set-Cookie`에 내용을 넣어 전달하면, 브라우저는 이 내용을 저장한다. 브라우저는 사용자가 쿠키를 생성하도록 동일 서버(사이트)에 접속할 때마다 쿠키의 내용을 `Cookie` 요청 헤더에 넣어서 함께 전달한다.
+
+쿠키는 클라이언트 식별과 같은 인증에 가장 많이 쓰인다.
+
+1. 사용자가 로그인하면 서버는 HTTP 응답 헤더의 `Set-Cookie`에 담긴 세션 식별자 정보를 사용해 쿠키를 설정한다.
+2. 사용자가 동일 도메인에 접속하려고 하면 브라우저는 HTTP `Cookie` 헤더에 인증 정보가 담긴 세션 식별자를 함께 실어 서버에 요청을 보낸다.
+3. 서버는 브라우저가 보낸 요청 헤더의 세션 식별자를 읽어 사용자를 식별한다.
+
+### 15.12.3 IndexedDB
+
+IndexedDB는 파일이나 블롭 등 많은 양의 구조화된 데이터를 클라이언트에 저장하기 위한 API이다.
+
+Web Storage는 적은 양의 데이터를 저장하는데 유용하지만 많은 양의 구조화된 데이터에는 적합하지 않은데, 이럴 때 IndexedDB를 사용할 수 있다.
+
+```jsx
+let openRequest = indexedDB.open(name, version);
+```
+
+---
+
+## 15.13 워커 스레드와 메시지[](http://localhost:3000/javascript-the-definitive-guide/javascript-in-web-browsers#1513-%EC%9B%8C%EC%BB%A4-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%99%80-%EB%A9%94%EC%8B%9C%EC%A7%80)
+
+**웹 워커**는 스크립트 연산을 웹 어플리케이션의 주 실행 스레드와 분리된 별도의 백그라운드 스레드에서 실행할 수 있는 기술이다. 웹 워커를 통해 무거운 작업을 분리된 스레드에서 처리하면 주 스레드가 멈추거나 느려지지 않고 동작할 수 있다.
+
+워커 스레드는 몇 가지 예외가 존재한다. 예를 들어 워커에서 DOM을 직접 조작할 수 없고, window의 일부 메서드와 속성은 사용할 수 없다. 그러나 웹 소켓과 IndexedDB
+를 포함한 많은 수의 항목은 사용 가능하다.
+
+<br />
+
 <hr />
 
 JavaScript: The Definitive Guide, Seventh Edition, by David Flanagan (O'Really). Copyright 2020 David Flanagan, 978-1-491-95202-3
