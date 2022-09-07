@@ -7,5 +7,5 @@ sidebar_position: 1
 
 > 개발 서적을 읽고 기록하고 있습니다.
 
--   [GitHub](https://github.com/mnxmnz)
--   [Tech Blog](https://deeming.vercel.app)
+- [GitHub](https://github.com/mnxmnz)
+- [Blog](https://mnxmnz.github.io)

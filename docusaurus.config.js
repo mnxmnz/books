@@ -3,9 +3,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'Deeming - Reading',
-	tagline: 'Learning by Writing || 안녕하세요. 개발 서적을 읽고 기록하고 있습니다.',
-	url: 'https://deeming-reading.vercel.app',
+	title: 'Books',
+	tagline: 'Learning by Reading || 안녕하세요. 개발 서적을 읽고 기록하고 있습니다.',
+	url: 'https://mnxmnz-books.vercel.app/',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -34,9 +34,9 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
 			navbar: {
-				title: 'Deeming - Reading',
+				title: 'Books',
 				logo: {
-					alt: 'Deeming - Reading Logo',
+					alt: 'logo',
 					src: 'img/icon.png',
 				},
 			},
@@ -73,7 +73,7 @@ const config = {
 							},
 							{
 								label: 'Tech Blog',
-								href: 'https://deeming.vercel.app',
+								href: 'https://mnxmnz.github.io/',
 							},
 						],
 					},
