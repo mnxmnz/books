@@ -72,7 +72,7 @@ const config = {
 								href: 'https://github.com/mnxmnz',
 							},
 							{
-								label: 'Tech Blog',
+								label: 'Blog',
 								href: 'https://mnxmnz.github.io/',
 							},
 						],
