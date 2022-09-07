@@ -1,5 +1,5 @@
-<h1 align="center">Deeming - Reading</h1>
-<p align="center">Learning by Writing</p>
+<h1 align="center">Books</h1>
+<p align="center">Learning by Reading</p>
 
 <br />
 
@@ -22,11 +22,11 @@ npx create-docusaurus@latest my-website classic --typescript
 1. Clone the Repo
 
 ```shell
-git clone https://github.com/mnxmnz/Book-Report.git
+git clone https://github.com/mnxmnz/Books.git
 ```
 
 ```shell
-cd Book-Report
+cd Books
 ```
 
 2. Install Project Packages
