@@ -51,16 +51,8 @@ const config = {
 								to: '/category/bottlenecks',
 							},
 							{
-								label: 'Clean Code',
-								to: '/category/clean-code',
-							},
-							{
 								label: 'Javascript The Definitive Guide',
 								to: '/category/javascript-the-definitive-guide',
-							},
-							{
-								label: 'Networking Principles',
-								to: '/category/networking-principles',
 							},
 						],
 					},
