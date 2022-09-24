@@ -11,6 +11,6 @@ sidebar_position: 1
 
 읽은 책 및 읽고 있는 책 목록입니다.
 
-| [UX 심리학](https://mnxmnz-books.vercel.app/category/bottlenecks) | [자바스크립트 완벽 가이드](https://mnxmnz-books.vercel.app/category/javascript-the-definitive-guide) | [모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/modern-javascript-deep-dive) |
-| :---------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-|             ![bottlenecks](./images/bottlenecks.png)              |           ![javascript-the-definitive-guide](./images/javascript-the-definitive-guide.png)           |              ![modern-javascript-deep-dive](./images/modern-javascript-deep-dive.png)               |
+| [UX 심리학](https://mnxmnz-books.vercel.app/category/bottlenecks) | [모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/modern-javascript-deep-dive) | [자바스크립트 완벽 가이드](https://mnxmnz-books.vercel.app/category/javascript-the-definitive-guide) |
+| :---------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+|             ![bottlenecks](./images/bottlenecks.png)              |              ![modern-javascript-deep-dive](./images/modern-javascript-deep-dive.png)               |           ![javascript-the-definitive-guide](./images/javascript-the-definitive-guide.png)           |
