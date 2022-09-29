@@ -54,6 +54,10 @@ const config = {
 								label: 'Javascript The Definitive Guide',
 								to: '/category/javascript-the-definitive-guide',
 							},
+							{
+								label: 'Modern JavaScript Deep Dive',
+								to: '/category/modern-javascript-deep-dive',
+							},
 						],
 					},
 					{
