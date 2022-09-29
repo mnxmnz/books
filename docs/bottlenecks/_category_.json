@@ -1,8 +1,8 @@
 {
-  "label": "Bottlenecks",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "데이비드 에반스의 [UX 심리학 - UX 디자이너와 개발자가 알아야 할 사용자 심리의 모든 것]을 읽고 정리했습니다."
-  }
+	"label": "Bottlenecks",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "데이비드 에반스의 [UX 심리학 - UX 디자이너와 개발자가 알아야 할 사용자 심리의 모든 것]을 읽고 정리했습니다."
+	}
 }
