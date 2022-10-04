@@ -39,6 +39,18 @@ const config = {
 					alt: 'logo',
 					src: 'img/icon.png',
 				},
+				items: [
+					{
+						href: 'https://github.com/mnxmnz',
+						label: 'GitHub',
+						position: 'right',
+					},
+					{
+						href: 'https://mnxmnz.github.io',
+						label: 'Blog',
+						position: 'right',
+					},
+				],
 			},
 			footer: {
 				style: 'dark',
@@ -69,7 +81,7 @@ const config = {
 							},
 							{
 								label: 'Blog',
-								href: 'https://mnxmnz.github.io/',
+								href: 'https://mnxmnz.github.io',
 							},
 						],
 					},
