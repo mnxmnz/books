@@ -47,16 +47,16 @@ const config = {
 						title: 'Books',
 						items: [
 							{
-								label: 'Bottlenecks',
-								to: '/category/bottlenecks',
+								label: 'UX 심리학',
+								to: '/category/ux-심리학',
 							},
 							{
-								label: 'Javascript The Definitive Guide',
-								to: '/category/javascript-the-definitive-guide',
+								label: '모던 자바스크립트 Deep Dive',
+								to: '/category/모던-자바스크립트-deep-dive',
 							},
 							{
-								label: 'Modern JavaScript Deep Dive',
-								to: '/category/modern-javascript-deep-dive',
+								label: '자바스크립트 완벽 가이드',
+								to: '/category/자바스크립트-완벽-가이드',
 							},
 						],
 					},
