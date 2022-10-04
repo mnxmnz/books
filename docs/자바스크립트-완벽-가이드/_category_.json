@@ -2,7 +2,6 @@
 	"label": "자바스크립트 완벽 가이드",
 	"position": 2,
 	"link": {
-		"type": "generated-index",
-		"description": "자바스크립트 완벽 가이드를 읽고 정리했습니다."
+		"type": "generated-index"
 	}
 }
