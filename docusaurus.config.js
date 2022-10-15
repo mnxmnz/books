@@ -70,6 +70,10 @@ const config = {
 								label: '자바스크립트 완벽 가이드',
 								to: '/category/자바스크립트-완벽-가이드',
 							},
+							{
+								label: '함께 자라기',
+								to: '/category/함께-자라기',
+							},
 						],
 					},
 					{
