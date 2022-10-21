@@ -71,6 +71,10 @@ const config = {
 								to: '/category/쉽게-배우는-운영체제',
 							},
 							{
+								label: '이펙티브 타입스크립트',
+								to: '/category/이펙티브-타입스크립트',
+							},
+							{
 								label: '자바스크립트 완벽 가이드',
 								to: '/category/자바스크립트-완벽-가이드',
 							},
