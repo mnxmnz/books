@@ -67,20 +67,8 @@ const config = {
 								to: '/category/모던-자바스크립트-deep-dive',
 							},
 							{
-								label: '쉽게 배우는 운영체제',
-								to: '/category/쉽게-배우는-운영체제',
-							},
-							{
-								label: '이펙티브 타입스크립트',
-								to: '/category/이펙티브-타입스크립트',
-							},
-							{
 								label: '자바스크립트 완벽 가이드',
 								to: '/category/자바스크립트-완벽-가이드',
-							},
-							{
-								label: '함께 자라기',
-								to: '/category/함께-자라기',
 							},
 						],
 					},
