@@ -66,10 +66,6 @@ const config = {
 								label: '모던 자바스크립트 Deep Dive',
 								to: '/category/모던-자바스크립트-deep-dive',
 							},
-							{
-								label: '자바스크립트 완벽 가이드',
-								to: '/category/자바스크립트-완벽-가이드',
-							},
 						],
 					},
 					{
