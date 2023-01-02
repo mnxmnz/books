@@ -82,7 +82,7 @@ const config = {
 						],
 					},
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} 김민지 Built with Docusaurus`,
+				copyright: `Copyright © 2022-${new Date().getFullYear()} 김민지 Built with Docusaurus`,
 			},
 			prism: {
 				theme: lightCodeTheme,
