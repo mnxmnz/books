@@ -8,9 +8,9 @@
 
 읽은 책 및 읽고 있는 책 목록입니다.
 
-|                     **[UX 심리학](https://mnxmnz-books.vercel.app/category/ux-심리학)**                      |                    **[모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/모던-자바스크립트-deep-dive)**                     |
-| :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![UX 심리학](https://mnxmnz-books.vercel.app/assets/images/bottlenecks-d1877d28a726a9c725cbe75ff2546bc0.png) | ![모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/assets/images/modern-javascript-deep-dive-ea293051e5f3b56a7c024217862f6782.png) |
+|                     **[UX 심리학](https://mnxmnz-books.vercel.app/category/ux-심리학)**                      |                 **[면접을 위한 CS 전공지식 노트](https://mnxmnz-books.vercel.app/category/면접을-위한-cs-전공지식-노트)**                 |                    **[모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/모던-자바스크립트-deep-dive)**                     |
+| :----------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![UX 심리학](https://mnxmnz-books.vercel.app/assets/images/bottlenecks-d1877d28a726a9c725cbe75ff2546bc0.png) | ![면접을 위한 CS 전공지식 노트](https://mnxmnz-books.vercel.app/assets/images/computer-science-note-053b9925ab8921f91aa30f3fe4a364bb.png) | ![모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/assets/images/modern-javascript-deep-dive-ea293051e5f3b56a7c024217862f6782.png) |
 
 <br />
 
