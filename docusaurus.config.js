@@ -63,6 +63,10 @@ const config = {
                 to: '/category/ux-심리학',
               },
               {
+                label: '면접을 위한 CS 전공지식 노트',
+                to: '/category/면접을-위한-cs-전공지식-노트',
+              },
+              {
                 label: '모던 자바스크립트 Deep Dive',
                 to: '/category/모던-자바스크립트-deep-dive',
               },
