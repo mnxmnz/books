@@ -39,18 +39,6 @@ const config = {
           alt: 'logo',
           src: 'img/icon.png',
         },
-        items: [
-          {
-            href: 'https://github.com/mnxmnz',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
-            href: 'https://mnxmnz.github.io',
-            label: 'Blog',
-            position: 'right',
-          },
-        ],
       },
       footer: {
         style: 'dark',
@@ -61,10 +49,6 @@ const config = {
               {
                 label: 'UX 심리학',
                 to: '/category/ux-심리학',
-              },
-              {
-                label: '면접을 위한 CS 전공지식 노트',
-                to: '/category/면접을-위한-cs-전공지식-노트',
               },
               {
                 label: '모던 자바스크립트 Deep Dive',
