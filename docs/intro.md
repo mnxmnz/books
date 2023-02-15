@@ -11,6 +11,6 @@ sidebar_position: 1
 
 읽은 책 및 읽고 있는 책 목록입니다.
 
-|  **[UX 심리학](/category/ux-심리학)**  | **[면접을 위한 CS 전공지식 노트](/category/면접을-위한-cs-전공지식-노트)** | **[모던 자바스크립트 Deep Dive](/category/모던-자바스크립트-deep-dive)** |
-| :------------------------------------: | :------------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| ![UX 심리학](./images/bottlenecks.png) |    ![면접을 위한 CS 전공지식 노트](./images/computer-science-note.png)     | ![모던 자바스크립트 Deep Dive](./images/modern-javascript-deep-dive.png) |
+|  **[UX 심리학](/category/ux-심리학)**  | **[모던 자바스크립트 Deep Dive](/category/모던-자바스크립트-deep-dive)** |
+| :------------------------------------: | :----------------------------------------------------------------------: |
+| ![UX 심리학](./images/bottlenecks.png) | ![모던 자바스크립트 Deep Dive](./images/modern-javascript-deep-dive.png) |
