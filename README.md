@@ -8,9 +8,9 @@
 
 읽은 책 및 읽고 있는 책 목록입니다.
 
-|                     **[UX 심리학](https://mnxmnz-books.vercel.app/category/ux-심리학)**                      |                    **[모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/모던-자바스크립트-deep-dive)**                     |
-| :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![UX 심리학](https://mnxmnz-books.vercel.app/assets/images/bottlenecks-d1877d28a726a9c725cbe75ff2546bc0.png) | ![모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/assets/images/modern-javascript-deep-dive-ea293051e5f3b56a7c024217862f6782.png) |
+|                    **[UX 심리학](https://mnxmnz-books.vercel.app/category/ux-심리학)**                     |                    **[러닝 타입스크립트](https://mnxmnz-books.vercel.app/category/러닝-타입스크립트)**                     |                    **[모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/category/모던-자바스크립트-deep-dive)**                     |
+| :--------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![UX 심리학](https://mnxmnz-books.vercel.app/assets/images/ux-심리학-fcddcdc6272b661b8645c28104053f3f.png) | ![러닝 타입스크립트](https://mnxmnz-books.vercel.app/assets/images/러닝-타입스크립트-4bf8d7ac0ed697d067909b8bdc596ae5.png) | ![모던 자바스크립트 Deep Dive](https://mnxmnz-books.vercel.app/assets/images/모던-자바스크립트-deep-dive-970e5e495a450dfa6e707e02a2240805.png) |
 
 <br />
 
