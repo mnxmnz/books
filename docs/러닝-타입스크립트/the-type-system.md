@@ -20,7 +20,7 @@ sidebar_position: 2
 - bigint
 - symbol
 
-> Boolean과 Number와 같은 객체는 각 원싯값을 감싸는 객체이다. 타입스크립트에서는 일반적으로 boolean과 number처럼 소문자로 참조하는 것이 모범 사례이다.
+Boolean과 Number와 같은 객체는 각 원싯값을 감싸는 객체이다. 타입스크립트에서는 일반적으로 boolean과 number처럼 소문자로 참조하는 것이 모범 사례이다.
 
 ### 2.1.1 타입 시스템
 
@@ -54,6 +54,11 @@ sidebar_position: 2
 
 **할당 가능성**: 타입스크립트에서 함수 호출이나 변수에 값을 제공할 수 있는지 여부를 확인하는 것
 
+```ts
+let lastName = 'King';
+lastName = true; // ERROR
+```
+
 ### 2.2.1 할당 가능성 오류 이해하기
 
 할당 가능성 오류는 타입스크립트 코드를 작성할 때 만나게 되는 가장 일반적인 오류 중 하나이다.
@@ -68,11 +73,23 @@ sidebar_position: 2
 
 변수에 타입 애너테이션으로 정의한 타입 외의 값을 할당하면 타입 오류가 발생한다.
 
+```ts
+let rocker;
+
+rocker = 'Joan Jett';
+rocker.toUpperCase(); // OK
+
+rocker = 19.58;
+rocker.toPrecision(1); // OK
+
+rocker.toUpperCase(); // ERROR
+```
+
 ### 2.3.1 불필요한 타입 애너테이션
 
-다음 코드에서 string 타입 애너테이션은 중복이다. 타입스크립트가 이미 firstName이 string 타입임을 유추할 수 있기 때문이다.
+다음 코드에서 string 타입 애너테이션은 중복이다. 타입스크립트가 이미 `firstName`이 string 타입임을 유추할 수 있기 때문이다.
 
-```tsx
+```ts
 let firstName: string = 'Tina';
 ```
 
@@ -84,7 +101,7 @@ let firstName: string = 'Tina';
 
 파일이 스크립트면 타입스크립트는 해당 파일을 전역 스코프로 간주하므로 모든 스크립트가 파일의 내용에 접근할 수 있다. 즉, 스크립트 파일에 선언된 변수는 다른 스크립트 파일에 선언된 변수와 동일한 이름을 가질 수 없다.
 
-> 타입스크립트는 CommonJS와 같은 이전 모듈을 사용해서 작성된 타입스크립트 파일의 import, export 형태는 인식하지 못한다. 타입스크립트는 일반적으로 CommonJS 스타일의 require 함수에서 반환된 값을 any 타입으로 인식한다.
+타입스크립트는 CommonJS와 같은 이전 모듈을 사용해서 작성된 타입스크립트 파일의 `import`, `export` 형태는 인식하지 못한다. 타입스크립트는 일반적으로 CommonJS 스타일의 `require` 함수에서 반환된 값을 any 타입으로 인식한다.
 
 ## 2.5 마치며
 
