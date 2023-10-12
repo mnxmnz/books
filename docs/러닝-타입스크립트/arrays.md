@@ -324,3 +324,13 @@ function firstCharAndSizeAsConst(input: string) {
 // size 타입: number
 const [firstChar3, size3] = firstCharAndSizeAsConst('Ching Shih');
 ```
+
+:::note
+
+**Type Assertions**
+
+![type-assertions](./images/study-as.png)
+
+- [TypeScript: Documentation - Everyday Types](https://www.typescriptlang.org/ko/docs/handbook/2/everyday-types.html#%ED%83%80%EC%9E%85-%EB%8B%A8%EC%96%B8)
+
+:::
