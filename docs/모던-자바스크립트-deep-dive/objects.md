@@ -29,14 +29,14 @@ sidebar_position: 10
 - Object.create 메서드
 - 클래스(ES6)
 
-객체 리터럴은 중괄호({ ... }) 내에 0개 이상의 프로퍼티를 정의한다. 변수에 할당되는 시점에 자바스크립트 엔진은 객체 리터럴을 해석해 객체를 생성한다.
+객체 리터럴은 중괄호(`{ ... }`) 내에 0개 이상의 프로퍼티를 정의한다. 변수에 할당되는 시점에 자바스크립트 엔진은 객체 리터럴을 해석해 객체를 생성한다.
 
 ```js
 var person = {
-	name: 'Lee',
-	sayHello: function () {
-		console.log(`Hello! My name is ${this.name}.`);
-	},
+  name: 'Lee',
+  sayHello: function () {
+    console.log(`Hello! My name is ${this.name}.`);
+  },
 };
 
 console.log(typeof person); // object
@@ -55,8 +55,8 @@ console.log(person); // {name: "Lee", sayHello: ƒ}
 
 ```js
 var person = {
-	firstName: 'Ung-mo', // 식별자 네이밍 규칙을 준수하는 프로퍼티 키
-	'last-name': 'Lee', // 식별자 네이밍 규칙을 준수하지 않는 프로퍼티 키
+  firstName: 'Ung-mo', // 식별자 네이밍 규칙을 준수하는 프로퍼티 키
+  'last-name': 'Lee', // 식별자 네이밍 규칙을 준수하지 않는 프로퍼티 키
 };
 
 console.log(person); // {firstName: "Ung-mo", last-name: "Lee"}
@@ -91,9 +91,9 @@ console.log(obj); // {hello: "world"}
 
 ```js
 var foo = {
-	0: 1,
-	1: 2,
-	2: 3,
+  0: 1,
+  1: 2,
+  2: 3,
 };
 
 console.log(foo); // {0: 1, 1: 2, 2: 3}
@@ -107,13 +107,13 @@ console.log(foo); // {0: 1, 1: 2, 2: 3}
 
 ```js
 var circle = {
-	radius: 5, // ← 프로퍼티
+  radius: 5, // ← 프로퍼티
 
-	// 원의 지름
-	getDiameter: function () {
-		// ← 메서드
-		return 2 * this.radius; // this는 circle을 가리킨다.
-	},
+  // 원의 지름
+  getDiameter: function () {
+    // ← 메서드
+    return 2 * this.radius; // this는 circle을 가리킨다.
+  },
 };
 
 console.log(circle.getDiameter()); // 10
@@ -130,7 +130,7 @@ console.log(circle.getDiameter()); // 10
 
 ```js
 var person = {
-	name: 'Lee',
+  name: 'Lee',
 };
 
 console.log(person[name]); // ReferenceError: name is not defined
@@ -142,7 +142,7 @@ console.log(person[name]); // ReferenceError: name is not defined
 
 ```js
 var person = {
-	name: 'Lee',
+  name: 'Lee',
 };
 
 console.log(person.age); // undefined
@@ -177,7 +177,7 @@ Node.js 환경에서는 현재 어디에도 `name`이라는 식별자(변수, �
 
 ```js
 var person = {
-	name: 'Lee',
+  name: 'Lee',
 };
 
 // person 객체에 name 프로퍼티가 존재하므로 name 프로퍼티의 값이 갱신된다.
@@ -190,7 +190,7 @@ console.log(person); // {name: "Kim"}
 
 ```js
 var person = {
-	name: 'Lee',
+  name: 'Lee',
 };
 
 // person 객체에는 age 프로퍼티가 존재하지 않는다.
@@ -204,7 +204,7 @@ console.log(person); // {name: "Lee", age: 20}
 
 ```js
 var person = {
-	name: 'Lee',
+  name: 'Lee',
 };
 
 // 프로퍼티 동적 생성
@@ -230,7 +230,7 @@ ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름�
 ```js
 // ES6
 let x = 1,
-	y = 2;
+  y = 2;
 
 // 프로퍼티 축약 표현
 const obj = { x, y };
@@ -264,9 +264,9 @@ let i = 0;
 
 // 객체 리터럴 내부에서 계산된 프로퍼티 이름으로 프로퍼티 키 동적 생성
 const obj = {
-	[`${prefix}-${++i}`]: i,
-	[`${prefix}-${++i}`]: i,
-	[`${prefix}-${++i}`]: i,
+  [`${prefix}-${++i}`]: i,
+  [`${prefix}-${++i}`]: i,
+  [`${prefix}-${++i}`]: i,
 };
 
 console.log(obj); // {prop-1: 1, prop-2: 2, prop-3: 3}
@@ -277,10 +277,10 @@ console.log(obj); // {prop-1: 1, prop-2: 2, prop-3: 3}
 ```js
 // ES5
 var obj = {
-	name: 'Lee',
-	sayHi: function () {
-		console.log('Hi! ' + this.name);
-	},
+  name: 'Lee',
+  sayHi: function () {
+    console.log('Hi! ' + this.name);
+  },
 };
 
 obj.sayHi(); // Hi! Lee
@@ -289,11 +289,11 @@ obj.sayHi(); // Hi! Lee
 ```js
 // ES6
 const obj = {
-	name: 'Lee',
-	// 메서드 축약 표현
-	sayHi() {
-		console.log('Hi! ' + this.name);
-	},
+  name: 'Lee',
+  // 메서드 축약 표현
+  sayHi() {
+    console.log('Hi! ' + this.name);
+  },
 };
 
 obj.sayHi(); // Hi! Lee

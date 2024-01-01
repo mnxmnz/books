@@ -122,12 +122,12 @@ Falsy 값 외의 모든 값은 모두 `true`로 평가되는 Truthy 값이다.
 ```js
 // 전달받은 인수가 Falsy 값이면 true, Truthy 값이면 false를 반환한다.
 function isFalsy(v) {
-	return !v;
+  return !v;
 }
 
 // 전달받은 인수가 Truthy 값이면 true, Falsy 값이면 false를 반환한다.
 function isTruthy(v) {
-	return !!v;
+  return !!v;
 }
 
 // 모두 true를 반환한다.
@@ -360,8 +360,8 @@ var value = elem && elem.value; // -> null
 ```js
 // 단축 평가를 사용한 매개변수의 기본값 설정
 function getStringLength(str) {
-	str = str || '';
-	return str.length;
+  str = str || '';
+  return str.length;
 }
 
 getStringLength(); // -> 0
@@ -369,7 +369,7 @@ getStringLength('hi'); // -> 2
 
 // ES6의 매개변수의 기본값 설정
 function getStringLength(str = '') {
-	return str.length;
+  return str.length;
 }
 
 getStringLength(); // -> 0

@@ -26,32 +26,32 @@ var month = 11;
 var monthName;
 
 switch (month) {
-	case 1:
-		monthName = 'January';
-	case 2:
-		monthName = 'February';
-	case 3:
-		monthName = 'March';
-	case 4:
-		monthName = 'April';
-	case 5:
-		monthName = 'May';
-	case 6:
-		monthName = 'June';
-	case 7:
-		monthName = 'July';
-	case 8:
-		monthName = 'August';
-	case 9:
-		monthName = 'September';
-	case 10:
-		monthName = 'October';
-	case 11:
-		monthName = 'November';
-	case 12:
-		monthName = 'December';
-	default:
-		monthName = 'Invalid month';
+  case 1:
+    monthName = 'January';
+  case 2:
+    monthName = 'February';
+  case 3:
+    monthName = 'March';
+  case 4:
+    monthName = 'April';
+  case 5:
+    monthName = 'May';
+  case 6:
+    monthName = 'June';
+  case 7:
+    monthName = 'July';
+  case 8:
+    monthName = 'August';
+  case 9:
+    monthName = 'September';
+  case 10:
+    monthName = 'October';
+  case 11:
+    monthName = 'November';
+  case 12:
+    monthName = 'December';
+  default:
+    monthName = 'Invalid month';
 }
 
 console.log(monthName); // Invalid month
@@ -71,30 +71,30 @@ var month = 2;
 var days = 0;
 
 switch (month) {
-	case 1:
-	case 3:
-	case 5:
-	case 7:
-	case 8:
-	case 10:
-	case 12:
-		days = 31;
-		break;
-	case 4:
-	case 6:
-	case 9:
-	case 11:
-		days = 30;
-		break;
-	case 2:
-		// 윤년 계산 알고리즘
-		// 1. 연도가 4로 나누어떨어지는 해(2000, 2004, 2008, 2012, 2016, 2020...)는 윤년이다.
-		// 2. 연도가 4로 나누어떨어지더라도 연도가 100으로 나누어떨어지는 해(2000, 2100, 2200...)는 평년이다.
-		// 3. 연도가 400으로 나누어떨어지는 해(2000, 2400, 2800...)는 윤년이다.
-		days = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
-		break;
-	default:
-		console.log('Invalid month');
+  case 1:
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+    days = 31;
+    break;
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+    days = 30;
+    break;
+  case 2:
+    // 윤년 계산 알고리즘
+    // 1. 연도가 4로 나누어떨어지는 해(2000, 2004, 2008, 2012, 2016, 2020...)는 윤년이다.
+    // 2. 연도가 4로 나누어떨어지더라도 연도가 100으로 나누어떨어지는 해(2000, 2100, 2200...)는 평년이다.
+    // 3. 연도가 400으로 나누어떨어지는 해(2000, 2400, 2800...)는 윤년이다.
+    days = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+    break;
+  default:
+    console.log('Invalid month');
 }
 
 console.log(days); // 29
@@ -106,7 +106,7 @@ console.log(days); // 29
 
 ```js
 for (var i = 0; i < 2; i++) {
-	console.log(i);
+  console.log(i);
 }
 ```
 
@@ -117,8 +117,8 @@ var count = 0;
 
 // count가 3보다 작을 때까지 코드 블록을 계속 반복 실행한다.
 while (count < 3) {
-	console.log(count); // 0 1 2
-	count++;
+  console.log(count); // 0 1 2
+  count++;
 }
 ```
 
@@ -129,8 +129,8 @@ var count = 0;
 
 // count가 3보다 작을 때까지 코드 블록을 계속 반복 실행한다.
 do {
-	console.log(count);
-	count++;
+  console.log(count);
+  count++;
 } while (count < 3); // 0 1 2
 ```
 
@@ -150,9 +150,9 @@ foo: console.log('foo');
 ```js
 // foo라는 식별자가 붙은 레이블 블록문
 foo: {
-	console.log(1);
-	break foo; // foo 레이블 블록문을 탈출한다.
-	console.log(2);
+  console.log(1);
+  break foo; // foo 레이블 블록문을 탈출한다.
+  console.log(2);
 }
 
 console.log('Done!');
@@ -163,11 +163,11 @@ console.log('Done!');
 ```js
 // outer라는 식별자가 붙은 레이블 for 문
 outer: for (var i = 0; i < 3; i++) {
-	for (var j = 0; j < 3; j++) {
-		// i + j === 3이면 outer라는 식별자가 붙은 레이블 for 문을 탈출한다.
-		if (i + j === 3) break outer;
-		console.log(`inner [${i}, ${j}]`);
-	}
+  for (var j = 0; j < 3; j++) {
+    // i + j === 3이면 outer라는 식별자가 붙은 레이블 for 문을 탈출한다.
+    if (i + j === 3) break outer;
+    console.log(`inner [${i}, ${j}]`);
+  }
 }
 
 console.log('Done!');
@@ -184,9 +184,9 @@ var count = 0;
 
 // 문자열은 유사배열이므로 for 문으로 순회할 수 있다.
 for (var i = 0; i < string.length; i++) {
-	// 'l'이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.
-	if (string[i] !== search) continue;
-	count++; // continue 문이 실행되면 이 문은 실행되지 않는다.
+  // 'l'이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.
+  if (string[i] !== search) continue;
+  count++; // continue 문이 실행되면 이 문은 실행되지 않는다.
 }
 
 console.log(count); // 3
@@ -199,23 +199,23 @@ console.log(string.match(regexp).length); // 3
 ```js
 // continue 문을 사용하지 않으면 if 문 내에 코드를 작성해야 한다.
 for (var i = 0; i < string.length; i++) {
-	// 'l'이면 카운트를 증가시킨다.
-	if (string[i] === search) {
-		count++;
-		// code
-		// code
-		// code
-	}
+  // 'l'이면 카운트를 증가시킨다.
+  if (string[i] === search) {
+    count++;
+    // code
+    // code
+    // code
+  }
 }
 
 // continue 문을 사용하면 if 문 밖에 코드를 작성할 수 있다.
 for (var i = 0; i < string.length; i++) {
-	// 'l'이 아니면 카운트를 증가시키지 않는다.
-	if (string[i] !== search) continue;
+  // 'l'이 아니면 카운트를 증가시키지 않는다.
+  if (string[i] !== search) continue;
 
-	count++;
-	// code
-	// code
-	// code
+  count++;
+  // code
+  // code
+  // code
 }
 ```
