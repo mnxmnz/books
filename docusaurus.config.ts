@@ -46,6 +46,10 @@ const config: Config = {
           title: 'Books',
           items: [
             {
+              label: 'HTTP 완벽 가이드',
+              to: '/category/http-완벽-가이드',
+            },
+            {
               label: 'UX 심리학',
               to: '/category/ux-심리학',
             },
@@ -56,6 +60,10 @@ const config: Config = {
             {
               label: '모던 자바스크립트 Deep Dive',
               to: '/category/모던-자바스크립트-deep-dive',
+            },
+            {
+              label: '이펙티브 타입스크립트',
+              to: '/category/이펙티브-타입스크립트',
             },
             {
               label: '클린 아키텍처',
