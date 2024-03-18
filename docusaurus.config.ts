@@ -62,6 +62,10 @@ const config: Config = {
               to: '/category/모던-자바스크립트-deep-dive',
             },
             {
+              label: '비전공자도 이해할 수 있는 AI 지식',
+              to: '/category/비전공자도-이해할-수-있는-ai-지식',
+            },
+            {
               label: '이펙티브 타입스크립트',
               to: '/category/이펙티브-타입스크립트',
             },
