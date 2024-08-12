@@ -66,6 +66,10 @@ const config: Config = {
               to: '/category/러닝-타입스크립트',
             },
             {
+              label: '리액트 훅을 활용한 마이크로 상태 관리',
+              to: '/category/리액트-훅을-활용한-마이크로-상태-관리',
+            },
+            {
               label: '모던 자바스크립트 Deep Dive',
               to: '/category/모던-자바스크립트-deep-dive',
             },
