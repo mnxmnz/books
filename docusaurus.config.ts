@@ -54,14 +54,6 @@ const config: Config = {
               to: '/category/ux-심리학',
             },
             {
-              label: '대규모 시스템 설계 기초 1',
-              to: '/category/대규모-시스템-설계-기초-1',
-            },
-            {
-              label: '대규모 시스템 설계 기초 2',
-              to: '/category/대규모-시스템-설계-기초-2',
-            },
-            {
               label: '러닝 타입스크립트',
               to: '/category/러닝-타입스크립트',
             },
@@ -78,12 +70,12 @@ const config: Config = {
               to: '/category/이펙티브-타입스크립트',
             },
             {
-              label: '자바 알고리즘 인터뷰',
-              to: '/category/자바-알고리즘-인터뷰',
-            },
-            {
               label: '클린 아키텍처',
               to: '/category/클린-아키텍처',
+            },
+            {
+              label: '한 권으로 읽는 컴퓨터 구조와 프로그래밍',
+              to: '/category/한-권으로-읽는-컴퓨터-구조와-프로그래밍',
             },
           ],
         },
