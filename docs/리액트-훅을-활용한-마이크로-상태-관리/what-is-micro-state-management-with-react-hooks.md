@@ -63,7 +63,7 @@ const Component = () => {
 
 - 마이크로 상태 관리 라이브러리에서 중요하다. 컴포넌트를 건드리지 않고 기능을 추가할 수 있다.
 
-## 4. 데이터 불러오기를 위한 서스펜스와 동시성 렌더링
+### 3-1. 데이터 불러오기를 위한 서스펜스와 동시성 렌더링
 
 > **데이터 불러오기를 위한 서스펜스**: 기본적으로 비동기 처리(async)에 대한 걱정 없이 컴포넌트를 코딩할 수 있는 방법이다.
 
@@ -73,34 +73,157 @@ const Component = () => {
 
 이러한 규칙을 위반하는 코드를 작성해도 비동시성 렌더링에서는 문제없이 작동하기 때문에 개발자는 잘못됐다는 것을 알아차리지 못한다. 심지어 동시성 렌더링에서도 어느 정도 문제없이 작동할 수 있어서 문제가 간헐적으로 발생할 수 있다.
 
-## 5. 전역 상태 탐구하기
+## 4. 전역 상태 탐구하기
 
-## 6. useState 사용하기
+전역 상태가 싱글톤일 필요는 없으며 싱글톤이 아니라는 점을 명확히 하기 위해 전역 상태를 공유 상태라 부르기도 한다.
 
-## 7. 값으로 상태 갱신하기
+리액트는 컴포넌트 모델에 기반한다. 컴포넌트 모델에서는 지역성이 중요하며 이는 컴포넌트가 서로 격리돼야 하고 재사용이 가능해야 한다는 것을 의미한다.
 
-## 8. 함수로 상태 갱신하기
+## 5. useState 사용하기
 
-## 9. 지연 초기화
+### 5-1. 값으로 상태 갱신하기
 
-## 10. useReducer 사용하기
+```tsx
+const Component = () => {
+  const [count, setCount] = useState(0);
 
-## 11. 기본 사용법
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(1)}>Set Count to 1</button>
+    </div>
+  );
+};
+```
 
-## 12. 베일아웃
+버튼을 다시 클릭하면 `setCount(1)` 을 다시 호출하지만 같은 값이기 때문에 '베일아웃'되어 컴포넌트를 다시 렌더링하지 않는다.
 
-## 13. 원시 값
+> **베일아웃**: 리액트 기술 용어로 리렌더링을 발생시키지 않는 것을 의미한다.
 
-## 14. 지연 초기화(init)
+```tsx
+const Component = () => {
+  const [state, setState] = useState({ count: 0 });
 
-## 15. useState와 useReducer의 유사점과 차이점
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => setState({ count: 1 })}>Set Count to 1</button>
+    </div>
+  );
+};
+```
 
-## 16. useReducer를 이용한 useState 구현
+버튼을 다시 클릭하면 컴포넌트가 리렌더링된다.두 번째 클릭을 통해 `{ count: 1 }` 이라는 객체를 생성하는데 이것이 이전 객체와 동일하지 않기 때문이다.
 
-## 17. useState를 이용한 useReducer 구현
+```tsx
+const Component = () => {
+  const [state, setState] = useState({ count: 0 });
 
-## 18. 초기화 함수 사용하기
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button
+        onClick={() => {
+          state.count = 1;
+          setState(state);
+        }}
+      >
+        Set Count to 1
+      </button>
+    </div>
+  );
+};
+```
 
-## 19. 인라인 리듀서 사용하기
+버튼을 클릭해도 `state` 객체가 실제로 변경되지 않았기 때문에 베일아웃되어 리렌더링이 발생하지 않는다.
 
-## 20. 정리
+### 5-2. 함수로 상태 갱신하기
+
+```tsx
+const Component = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setCount(count => count + 1), 1000);
+
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count => (count % 2 === 0 ? count : count + 1))}>
+        Increment Count if it makes the result even
+      </button>
+    </div>
+  );
+};
+```
+
+갱신 함수가 이전 상태와 같은 상태를 반환하는 경우 베일아웃이 발생하고 컴포넌트는 리렌더링되지 않는다.
+
+### 5-3. 지연 초기화
+
+```tsx
+const init = () => 0;
+
+const Component = () => {
+  const [count, setCount] = useState(init);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count => count + 1)}>Increment Count</button>
+    </div>
+  );
+};
+```
+
+`useState` 를 호출하기 전까지 `init` 함수는 평가되지 않고 느리게 평가된다. 컴포넌트가 마운트될 때 한 번만 호출된다.
+
+## 6. useReducer 사용하기
+
+### 6-1. 기본 사용법
+
+```tsx
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'SET_TEXT':
+      return { ...state, text: action.text ?? state.text };
+    default:
+      throw new Error('Unknown Action Type');
+  }
+};
+
+const Component = () => {
+  const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, { count: 0, text: 'Hi' });
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment count</button>
+      <input value={state.text} onChange={e => dispatch({ type: 'SET_TEXT', text: e.target.value })} />
+    </div>
+  );
+}
+```
+
+### 6-2. 베일아웃
+
+### 6-3. 원시 값
+
+### 6-4. 지연 초기화(init)
+
+## 7. useState와 useReducer의 유사점과 차이점
+
+### 7-1. useReducer를 이용한 useState 구현
+
+### 7-2. useState를 이용한 useReducer 구현
+
+### 7-3. 초기화 함수 사용하기
+
+### 7-4. 인라인 리듀서 사용하기
+
+## 8. 정리
