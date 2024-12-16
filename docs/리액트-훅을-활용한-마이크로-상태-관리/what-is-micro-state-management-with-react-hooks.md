@@ -90,7 +90,7 @@ const Component = () => {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={() => setCount(1)}>Set Count to 1</button>
+      <button onClick={() => setCount(1)}>Set count to 1</button>
     </div>
   );
 };
@@ -107,7 +107,7 @@ const Component = () => {
   return (
     <div>
       <p>{state.count}</p>
-      <button onClick={() => setState({ count: 1 })}>Set Count to 1</button>
+      <button onClick={() => setState({ count: 1 })}>Set count to 1</button>
     </div>
   );
 };
@@ -128,7 +128,7 @@ const Component = () => {
           setState(state);
         }}
       >
-        Set Count to 1
+        Set count to 1
       </button>
     </div>
   );
@@ -153,7 +153,7 @@ const Component = () => {
     <div>
       <p>{count}</p>
       <button onClick={() => setCount(count => (count % 2 === 0 ? count : count + 1))}>
-        Increment Count if it makes the result even
+        Increment count if it makes the result even
       </button>
     </div>
   );
@@ -173,7 +173,7 @@ const Component = () => {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={() => setCount(count => count + 1)}>Increment Count</button>
+      <button onClick={() => setCount(count => count + 1)}>Increment count</button>
     </div>
   );
 };
@@ -191,9 +191,9 @@ const reducer = (state: State, action: Action) => {
     case 'INCREMENT':
       return { ...state, count: state.count + 1 };
     case 'SET_TEXT':
-      return { ...state, text: action.text ?? state.text };
+      return { ...state, text: action.text };
     default:
-      throw new Error('Unknown Action Type');
+      throw new Error('Unknown action type');
   }
 };
 
@@ -207,23 +207,181 @@ const Component = () => {
       <input value={state.text} onChange={e => dispatch({ type: 'SET_TEXT', text: e.target.value })} />
     </div>
   );
-}
+};
 ```
 
 ### 6-2. 베일아웃
 
+```tsx
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'SET_TEXT':
+      if (!action.text) {
+        // 베일아웃
+        return state;
+      }
+
+      return { ...state, text: action.text };
+    default:
+      throw new Error('Unknown action type');
+  }
+};
+
+const Component = () => {
+  const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, { count: 0, text: 'Hi' });
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment count</button>
+      <input value={state.text} onChange={e => dispatch({ type: 'SET_TEXT', text: e.target.value })} />
+    </div>
+  );
+};
+```
+
+`state` 자체를 반환하는 것이 중요하다. `{ ...state, text: action.text || state.text }` 를 반환하면 새로운 객체가 생성되기 때문에 베일아웃이 발생하지 않는다.
+
 ### 6-3. 원시 값
 
+```tsx
+const reducer = (count, delta) => {
+  if (delta < 0) {
+    throw new Error('Delta must be positive');
+  }
+  if (delta > 10) {
+    return count;
+  }
+  if (count < 100) {
+    return count + delta + 10;
+  }
+  return count + delta;
+};
+```
+
 ### 6-4. 지연 초기화(init)
+
+```tsx
+const init = (count: number): State => ({ count, text: 'Hi' });
+
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'SET_TEXT':
+      if (!action.text) {
+        return state;
+      }
+
+      return { ...state, text: action.text };
+    default:
+      throw new Error('Unknown action type');
+  }
+};
+
+export default function Component() {
+  const [state, dispatch] = useReducer<Reducer<State, Action>, number>(reducer, 0, init);
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment count</button>
+      <input value={state.text} onChange={e => dispatch({ type: 'SET_TEXT', text: e.target.value })} />
+    </div>
+  );
+}
+```
+
+`init` 함수는 `useReducer` 의 두 번째 인수인 `initialArg` 를 받는다.
 
 ## 7. useState와 useReducer의 유사점과 차이점
 
 ### 7-1. useReducer를 이용한 useState 구현
 
+```ts
+const useState = <T>(initialState: T): [T, Dispatch<SetStateAction<T>>] => {
+  const [state, dispatch] = useReducer<Reducer<T, SetStateAction<T>>>(
+    (prev, action) => (typeof action === 'function' ? (action as (prevState: T) => T)(prev) : action),
+    initialState,
+  );
+
+  return [state, dispatch];
+};
+```
+
+```ts
+const reducer = <T>(prev: T, action: T | ((prev: T) => T)) =>
+  typeof action === 'function' ? (action as (prev: T) => T)(prev) : action;
+
+const useState = <T>(initialState: T) => useReducer(reducer<T>, initialState);
+```
+
 ### 7-2. useState를 이용한 useReducer 구현
+
+```ts
+const useReducer = <S, A>(reducer: (state: S, action: A) => S, initialArg: S, init?: (arg: S) => S) => {
+  const [state, setState] = useState(init ? () => init(initialArg) : initialArg);
+
+  const dispatch = useCallback((action: A) => setState((prev: S) => reducer(prev, action)), [reducer]);
+
+  return [state, dispatch];
+};
+```
 
 ### 7-3. 초기화 함수 사용하기
 
+한 가지 차이점은 `reducer` 와 `init` 을 훅이나 컴포넌트 외부에서 정의할 수 있다는 점이다.
+
+```tsx
+const init = (count: number): CountState => ({ count });
+
+const reducer = (prev: CountState, delta: number): CountState => ({
+  ...prev,
+  count: prev.count + delta,
+});
+
+const ComponentWithUseReducer = ({ initialCount }: CounterProps) => {
+  const [state, dispatch] = useReducer(reducer, initialCount, init);
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch(1)}>+1</button>
+    </div>
+  );
+};
+
+const ComponentWithUseState = ({ initialCount }: CounterProps) => {
+  const [state, setState] = useState<CountState>(() => init(initialCount));
+  const dispatch = (delta: number) => setState(prev => reducer(prev, delta));
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch(1)}>+1</button>
+    </div>
+  );
+};
+```
+
 ### 7-4. 인라인 리듀서 사용하기
 
-## 8. 정리
+인라인 리듀서 함수는 외부 변수에 의존할 수 있다. `useReducer` 에서만 가능하며 `useState` 에서는 불가능하다.
+
+:::note
+
+이 기능은 일반적으로는 사용되지 않으며 꼭 필요한 경우가 아니라면 권장하지 않는다.
+
+:::
+
+```ts
+const useScore = bonus => useReducer(((prev, delta) = prev + delta + bonus), 0);
+```
+
+`bonus` 와 `delta` 가 모두 갱신된 경우에도 올바르게 작동한다.
+
+`useState` 를 사용하면 제대로 작동하지 않는다. 이전 렌더링에서 사용된 이전 `bonus` 값을 사용하게 된다. 이는 `useReducer` 가 렌더링 단계에서 리듀서 함수를 호출하기 때문이다.
+
+전반적으로 특별한 기능만 제외하면 `useReducer` 와 `useState` 는 기본적으로 동일하며 상호 교환 가능하다고 말할 수 있다.
