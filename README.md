@@ -1,6 +1,6 @@
 # Books
 
-개발 서적을 읽고 기록하고 있습니다. ([🔗 URL](https://mnxmnz-books.vercel.app/))
+개발 서적과 공식 문서를 읽고 기록하고 있습니다. ([🔗 URL](https://mnxmnz-books.vercel.app/))
 
 ## Built With
 
