@@ -5,8 +5,8 @@ const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 const config: Config = {
-  title: 'Books',
-  tagline: 'Learning by Reading || 안녕하세요. 개발 서적을 읽고 기록하고 있습니다.',
+  title: 'Books & Docs',
+  tagline: 'Learning by Reading || 안녕하세요. 개발 서적과 공식 문서를 읽고 기록하고 있습니다.',
   url: 'https://mnxmnz-books.vercel.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -33,7 +33,7 @@ const config: Config = {
   ],
   themeConfig: {
     navbar: {
-      title: 'Books',
+      title: 'Books & Docs',
       logo: {
         alt: 'logo',
         src: 'img/icon.png',
@@ -50,16 +50,8 @@ const config: Config = {
               to: '/category/http-완벽-가이드',
             },
             {
-              label: 'UX 심리학',
-              to: '/category/ux-심리학',
-            },
-            {
               label: '러닝 타입스크립트',
               to: '/category/러닝-타입스크립트',
-            },
-            {
-              label: '리액트 훅을 활용한 마이크로 상태 관리',
-              to: '/category/리액트-훅을-활용한-마이크로-상태-관리',
             },
             {
               label: '모던 자바스크립트 Deep Dive',
@@ -73,9 +65,18 @@ const config: Config = {
               label: '클린 아키텍처',
               to: '/category/클린-아키텍처',
             },
+          ],
+        },
+        {
+          title: 'Docs',
+          items: [
             {
-              label: '한 권으로 읽는 컴퓨터 구조와 프로그래밍',
-              to: '/category/한-권으로-읽는-컴퓨터-구조와-프로그래밍',
+              label: 'Google Web Dev',
+              to: '/category/google-web-dev',
+            },
+            {
+              label: 'React 공식 문서',
+              to: '/category/react-공식-문서',
             },
           ],
         },
