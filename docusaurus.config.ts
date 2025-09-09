@@ -68,11 +68,11 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Contact',
           items: [
             {
-              label: 'Blog',
-              href: 'https://mnxmnz.github.io',
+              label: 'Email',
+              href: 'mailto:minzidev@gmail.com',
             },
             {
               label: 'GitHub',
@@ -81,6 +81,15 @@ const config: Config = {
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/dev-mnxmnz',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              href: 'https://mnxmnz.github.io',
             },
           ],
         },
