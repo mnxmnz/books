@@ -5,9 +5,9 @@ const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 const config: Config = {
-  title: 'Books & Docs',
-  tagline: 'Learning by Reading || 안녕하세요. 개발 서적과 공식 문서를 읽고 기록하고 있습니다.',
-  url: 'https://mnxmnz-books.vercel.app/',
+  title: 'Books',
+  tagline: 'Learning by Reading || 안녕하세요. 개발 서적을 읽고 기록하고 있습니다.',
+  url: 'https://mnxmnz-books.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -33,7 +33,7 @@ const config: Config = {
   ],
   themeConfig: {
     navbar: {
-      title: 'Books & Docs',
+      title: 'Books',
       logo: {
         alt: 'logo',
         src: 'img/icon.png',
@@ -64,19 +64,6 @@ const config: Config = {
             {
               label: '클린 아키텍처',
               to: '/category/클린-아키텍처',
-            },
-          ],
-        },
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Google Web Dev',
-              to: '/category/google-web-dev',
-            },
-            {
-              label: 'React 공식 문서',
-              to: '/category/react-공식-문서',
             },
           ],
         },
