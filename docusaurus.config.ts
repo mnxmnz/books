@@ -32,6 +32,48 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'books, reading, programming, javascript, typescript, architecture, network, design',
+      },
+      {
+        name: 'description',
+        content: '개발 서적을 읽고 기록하고 있습니다.',
+      },
+      {
+        name: 'author',
+        content: '김민지',
+      },
+      {
+        name: 'og:title',
+        content: 'Books',
+      },
+      {
+        name: 'og:description',
+        content: '개발 서적을 읽고 기록하고 있습니다.',
+      },
+      {
+        name: 'og:image',
+        content: 'img/icon.png',
+      },
+      {
+        name: 'og:url',
+        content: 'https://mnxmnz-books.vercel.app',
+      },
+      {
+        name: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'og:locale',
+        content: 'ko_KR',
+      },
+      {
+        name: 'og:site_name',
+        content: 'Books',
+      },
+    ],
     navbar: {
       title: 'Books',
       logo: {
